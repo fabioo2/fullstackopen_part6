@@ -3,8 +3,6 @@ const filterReducer = (state = '', action) => {
         case 'SET_FILTER':
             const filter = action.filter;
             return filter;
-        case 'REMOVE_NOTIFICATION':
-            return '';
         default:
             return state;
     }
