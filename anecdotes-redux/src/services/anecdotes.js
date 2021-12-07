@@ -15,6 +15,7 @@ const createNew = async (content) => {
 
 const update = async (anecdote) => {
     console.log(anecdote);
+    // ? can i do this here or should this be done in the reducer?
     const updatedAnecdote = { ...anecdote, votes: ++anecdote.votes };
 
     const response = await axios.put(`${baseUrl}/${anecdote.id}`, updatedAnecdote);
