@@ -9,14 +9,14 @@ const notificationReducer = (state = '', action) => {
 };
 
 export const setNotification = (notification, seconds) => {
-    return async (dispatch) => {
+    return (dispatch) => {
         const milliseconds = seconds * 1000;
         dispatch({
             type: 'SET_NOTIFICATION',
             notification,
         });
         // ? do i need to add await? is set TimeOut async?
-        await setTimeout(
+        setTimeout(
             () =>
                 dispatch({
                     type: 'SET_NOTIFICATION',
