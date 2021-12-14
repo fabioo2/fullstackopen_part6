@@ -24,7 +24,7 @@ const Anecdotes = () => {
 
     const handleVote = async (anecdote) => {
         dispatch(voteOnAnecdote(anecdote));
-        dispatch(setNotification(`You voted '${anecdote.content}'`, 1));
+        dispatch(setNotification(`You voted '${anecdote.content}'`, 5));
     };
 
     return (

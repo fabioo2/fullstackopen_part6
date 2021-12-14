@@ -15,8 +15,8 @@ export const setNotification = (notification, seconds) => {
             type: 'SET_NOTIFICATION',
             notification,
         });
-        // ? do i need to add await? is set TimeOut async?
-        setTimeout(
+
+        let id = setTimeout(
             () =>
                 dispatch({
                     type: 'SET_NOTIFICATION',
@@ -24,6 +24,9 @@ export const setNotification = (notification, seconds) => {
                 }),
             milliseconds
         );
+        while (id--) {
+            window.clearTimeout(id); // will do nothing if no timeout with id is present
+        }
     };
 };
 
